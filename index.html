@@ -8,7 +8,87 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.5">
+  <style>
+    /* Direct Sub-Header Styles (No Cache Dependency) */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 20px;
+      background: rgba(5, 9, 19, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      text-align: center;
+    }
+    .sub-header-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 16px;
+      background: rgba(12, 20, 36, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+    }
+    .sub-header-bar .currency-picker {
+      display: flex;
+      background: rgba(18, 32, 54, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 3px;
+      border-radius: 10px;
+      gap: 3px;
+    }
+    @media (max-width: 640px) {
+      .navbar {
+        padding: 10px 14px;
+      }
+      .brand-title {
+        font-size: 0.92rem;
+      }
+      .brand-sub {
+        font-size: 0.65rem;
+      }
+      .sub-header-bar {
+        padding: 8px 12px;
+        gap: 8px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .sub-header-bar .currency-picker {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+        box-sizing: border-box;
+      }
+      .sub-header-bar .curr-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 7px 2px;
+        font-size: 0.78rem;
+      }
+      .sub-header-bar .nav-link-btn {
+        width: 100%;
+        text-align: center;
+        padding: 7px 12px;
+        font-size: 0.8rem;
+        box-sizing: border-box;
+        border-radius: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -19,29 +99,27 @@
 
   <!-- TOP BRANDING NAVBAR -->
   <header class="navbar">
-    <div class="nav-brand-row">
-      <div class="nav-brand">
-        <div class="brand-logo-frame">
-          <img src="assets/jiguu_logo.png" alt="JiGUU" class="brand-logo" onerror="this.style.display='none'">
-        </div>
-        <div class="brand-text">
-          <div class="brand-title">TWO TIMELINES <span class="calc-tag">SIMULATOR</span></div>
-          <div class="brand-sub">Official Companion • <em>Digital Dad, Traditional Dad</em> by <strong>SAMEER SIR</strong></div>
-        </div>
+    <div class="nav-brand">
+      <div class="brand-logo-frame">
+        <img src="assets/jiguu_logo.png" alt="JiGUU" class="brand-logo" onerror="this.style.display='none'">
       </div>
-      <a href="#toolkit-section" class="nav-link-btn mobile-toolkit-btn">🎁 Toolkits</a>
-    </div>
-    
-    <div class="nav-controls">
-      <div class="currency-picker">
-        <button class="curr-btn active" data-currency="USD" id="btn-usd"><span class="curr-symbol">$</span> USD</button>
-        <button class="curr-btn" data-currency="INR" id="btn-inr"><span class="curr-symbol">₹</span> INR</button>
-        <button class="curr-btn" data-currency="GBP" id="btn-gbp"><span class="curr-symbol">£</span> GBP</button>
-        <button class="curr-btn" data-currency="EUR" id="btn-eur"><span class="curr-symbol">€</span> EUR</button>
+      <div class="brand-text">
+        <div class="brand-title">TWO TIMELINES <span class="calc-tag">SIMULATOR</span></div>
+        <div class="brand-sub">Official Companion • <em>Digital Dad, Traditional Dad</em> by <strong>SAMEER SIR</strong></div>
       </div>
-      <a href="#toolkit-section" class="nav-link-btn desktop-toolkit-btn">🎁 Free Toolkits</a>
     </div>
   </header>
+
+  <!-- CONTROLS BAR: DIRECTLY BELOW HEADER (SCREEN SE BAHAR JANA KHATAM) -->
+  <div class="sub-header-bar">
+    <div class="currency-picker">
+      <button class="curr-btn active" data-currency="USD" id="btn-usd"><span class="curr-symbol">$</span> USD</button>
+      <button class="curr-btn" data-currency="INR" id="btn-inr"><span class="curr-symbol">₹</span> INR</button>
+      <button class="curr-btn" data-currency="GBP" id="btn-gbp"><span class="curr-symbol">£</span> GBP</button>
+      <button class="curr-btn" data-currency="EUR" id="btn-eur"><span class="curr-symbol">€</span> EUR</button>
+    </div>
+    <a href="#toolkit-section" class="nav-link-btn">🎁 Free Toolkits</a>
+  </div>
 
   <!-- LUXURY HERO SECTION -->
   <section class="hero-simple">
